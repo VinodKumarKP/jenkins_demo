@@ -6,8 +6,17 @@ pipeline {
             args '-u root'
         }
     }
-
+    parameters {
+        string(name: 'PARAM1', description: 'Param 1?')
+        string(name: 'PARAM2', description: 'Param 2?')
+    }
     stages {
+        stage('Print') {
+            steps {
+                echo "Hello ${params.PARAM1}"
+                echo "Hello ${params.PARAM2}"
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building...'
