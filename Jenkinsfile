@@ -9,6 +9,7 @@ pipeline {
     parameters {
         string(name: 'PARAM1', description: 'Param 1?')
         string(name: 'PARAM2', description: 'Param 2?')
+        string(name: 'BRANCH', description: 'Branch to be build')
     }
     stages {
         stage('Print') {
